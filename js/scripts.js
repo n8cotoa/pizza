@@ -106,6 +106,7 @@ $(document).ready(function(){
   $("#name, input:radio[name=size], #crust, input:checkbox[name=topping]").click(function(){
   inputHasValues() ? enableOrderBtn() : disableOrderBtn();
   })
+
   $("#add-delivery").click(function() {
     $("#delivery-address").slideDown()
     $("#pizzaForm").slideUp()
@@ -157,5 +158,6 @@ $(document).ready(function(){
     $("input.new-city").val("");
     $("input.new-state").val("");
     $("#delivery-address").slideUp()
+    disableOrderBtn()
   });
 });
