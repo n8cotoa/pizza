@@ -83,7 +83,6 @@ function validateAddressReceipt() {
   if (status === true) {
     $("#receiptAddress").text(deliveryAddress.fullAddress())
   }
-
 }
 
 $(document).ready(function(){
