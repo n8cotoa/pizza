@@ -72,4 +72,12 @@ $(document).ready(function(){
     var pizza = new MyPizza(name, size, toppings, crust)
     pizza.calcCost()
   });
+
+  $("#reset").click(function(e){
+    e.preventDefault()
+    $("#name").val("")
+    $("input:radio[name=size]").prop('checked', false)
+    $("#crust").prop("selectedIndex", 0)
+    $("input:checkbox[name=topping]:checked").prop('checked', false)
+  });
 });
