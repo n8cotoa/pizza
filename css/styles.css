@@ -20,6 +20,10 @@ body {
   margin-right: 10px;
 }
 
+input {
+  margin-right: 5px;
+}
+
 #delivery-address, #back {
   display:none;
 }
