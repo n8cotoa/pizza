@@ -3,6 +3,13 @@ function MyPizza(name, size, toppings, crust) {
   this.size = size;
   this.toppings = toppings;
   this.crust = crust;
+  this.address = []
+}
+
+function Address(street, city, state) {
+  this.street = street;
+  this.city = city;
+  this.state = state;
 }
 
 function sizeCost(input) {
@@ -59,6 +66,10 @@ MyPizza.prototype.calcCost = function() {
 }
 
 $(document).ready(function(){
+  $("#add-delivery").click(function() {
+    $("#delivery-address").slideDown()
+  });
+
   $("#pizzaBtn").click(function(e){
     e.preventDefault()
     var name = $("#name").val()
@@ -69,6 +80,17 @@ $(document).ready(function(){
       toppings.push($(this).val())
       });
     var pizza = new MyPizza(name, size, toppings, crust)
+
+    $(".new-address").each(function() {
+     var inputtedStreet = $(this).find("input.new-street").val();
+     var inputtedCity = $(this).find("input.new-city").val();
+     var inputtedState = $(this).find("input.new-state").val();
+     var deliveryAddress = new Address(inputtedStreet, inputtedCity, inputtedState);
+     pizza.address.push(deliveryAddress);
+     console.log(pizza);
+   });
+
+
     $("#receiptName").text(pizza.name)
     $("#receiptSize").text(pizza.size)
     $("#receiptCrust").text(pizza.crust)
@@ -82,5 +104,9 @@ $(document).ready(function(){
     $("input:radio[name=size]").prop('checked', false)
     $("#crust").prop("selectedIndex", 0)
     $("input:checkbox[name=topping]:checked").prop('checked', false)
+    $("input.new-street").val("");
+    $("input.new-city").val("");
+    $("input.new-state").val("");
+    $("#delivery-address").slideUp()
   });
 });
