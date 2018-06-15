@@ -42,7 +42,6 @@ function crustCost(input) {
 
 function toppingsCost(input) {
   var price = 0
-  console.log(input.length);
   if (input.length === 1) {
     price = 1
   } else if (input.length === 2) {
@@ -56,7 +55,7 @@ function toppingsCost(input) {
 }
 
 MyPizza.prototype.calcCost = function() {
-  return 5 + sizeCost(this.size) + crustCost(this.crust) + toppingsCost(this.toppings)
+  return 7 + sizeCost(this.size) + crustCost(this.crust) + toppingsCost(this.toppings)
 }
 
 $(document).ready(function(){
@@ -68,9 +67,13 @@ $(document).ready(function(){
     var toppings = []
       $("input:checkbox[name=topping]:checked").each(function(){
       toppings.push($(this).val())
-    });
+      });
     var pizza = new MyPizza(name, size, toppings, crust)
-    pizza.calcCost()
+    $("#receiptName").text(pizza.name)
+    $("#receiptSize").text(pizza.size)
+    $("#receiptCrust").text(pizza.crust)
+    $("#receiptToppings").text(pizza.toppings.join(", "))
+    $("#receiptTotal").text(" $" + pizza.calcCost())
   });
 
   $("#reset").click(function(e){

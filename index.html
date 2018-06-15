@@ -25,9 +25,9 @@
             </div>
             <div class="form-group">
               <label for="pizzaSize">Size:</label><br>
-              <label class="radio-inline"><input type="radio" name="size" value="small">Small</label>
-              <label class="radio-inline"><input type="radio" name="size" value="medium">Medium</label>
-              <label class="radio-inline"><input type="radio" name="size" value="large">Large</label>
+              <label class="radio-inline"><input type="radio" name="size" value="Small">Small</label>
+              <label class="radio-inline"><input type="radio" name="size" value="Medium">Medium</label>
+              <label class="radio-inline"><input type="radio" name="size" value="Large">Large</label>
             </div>
             <div class="form-group">
               <label for="crust">Crust Style:</label>
@@ -56,14 +56,19 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">Modal title</h5>
+            <h3 class="modal-title"><span id="receiptName"></span>'s Reciept</h3>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
-            <h3><span id="receiptName"></span>'s Reciept</h3>
-            <p>Modal body text goes here.</p>
+            <h5>Pizza Size:</h5>
+            <p id="receiptSize"></p>
+            <h5>Crust Type:</h5>
+            <p id="receiptCrust"></p>
+            <h5>Toppings:</h5>
+            <p id="receiptToppings"></p>
+            <h4>Total:<span id="receiptTotal"></span></h4>
           </div>
           <div class="modal-footer">
             <button id="reset" type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
