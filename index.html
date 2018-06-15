@@ -9,5 +9,43 @@
   <script src="js/scripts.js"></script>
 </head>
 <body>
+  <div class="jumbotron">
+    <h1>Pizza, Pizza!</h1>
+  </div>
+  <div class="container">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h2>Build your pizza</h2>
+        <div class="panel-body">
+          <form>
+            <div class="form-group">
+              <label for="pizzaSize">Size:</label><br>
+              <label class="radio-inline"><input type="radio" name="small" value="small">Small</label>
+              <label class="radio-inline"><input type="radio" name="medium" value="medium">Medium</label>
+              <label class="radio-inline"><input type="radio" name="large" value="large">Large</label>
+            </div>
+            <div class="form-group">
+              <label for="crust">Crust Style:</label>
+              <select class="form-control" id="crust">
+                <option>Regular Crust</option>
+                <option>Thin Crust</option>
+                <option>Deep Dish</option>
+                <option>Stuffed Crust</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for=toppings>Toppings:</label><br>
+              <label class="checkbox-inline"><input type="checkbox" value="">Topping</label>
+              <label class="checkbox-inline"><input type="checkbox" value="">Topping</label>
+              <label class="checkbox-inline"><input type="checkbox" value="">Topping</label>
+              <label class="checkbox-inline"><input type="checkbox" value="">Topping</label>
+              <label class="checkbox-inline"><input type="checkbox" value="">Topping</label>
+              <label class="checkbox-inline"><input type="checkbox" value="">Topping</label>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
