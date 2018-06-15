@@ -1,3 +1,6 @@
+var pizza = ""
+var deliveryAddress = ""
+
 function MyPizza(name, size, toppings, crust) {
   this.name = name;
   this.size = size;
@@ -10,6 +13,10 @@ function Address(street, city, state) {
   this.street = street;
   this.city = city;
   this.state = state;
+}
+
+Address.prototype.fullAddress = function() {
+  return this.street + ", " + this.city + " " + this.state
 }
 
 function sizeCost(input) {
@@ -65,6 +72,20 @@ MyPizza.prototype.calcCost = function() {
   return 7 + sizeCost(this.size) + crustCost(this.crust) + toppingsCost(this.toppings)
 }
 
+function validateAddressReceipt() {
+  var status=false
+  $(".new-address input").each(function(){
+    if ($(this).val() !== "") {
+    $("#deliveryTitle").text("Deliver to:")
+    status = true
+    }
+  })
+  if (status === true) {
+    $("#receiptAddress").text(deliveryAddress.fullAddress())
+  }
+
+}
+
 $(document).ready(function(){
   $("#add-delivery").click(function() {
     $("#delivery-address").slideDown()
@@ -79,23 +100,22 @@ $(document).ready(function(){
       $("input:checkbox[name=topping]:checked").each(function(){
       toppings.push($(this).val())
       });
-    var pizza = new MyPizza(name, size, toppings, crust)
+    pizza = new MyPizza(name, size, toppings, crust)
 
     $(".new-address").each(function() {
      var inputtedStreet = $(this).find("input.new-street").val();
      var inputtedCity = $(this).find("input.new-city").val();
      var inputtedState = $(this).find("input.new-state").val();
-     var deliveryAddress = new Address(inputtedStreet, inputtedCity, inputtedState);
+     deliveryAddress = new Address(inputtedStreet, inputtedCity, inputtedState);
      pizza.address.push(deliveryAddress);
-     console.log(pizza);
    });
-
 
     $("#receiptName").text(pizza.name)
     $("#receiptSize").text(pizza.size)
     $("#receiptCrust").text(pizza.crust)
     $("#receiptToppings").text(pizza.toppings.join(", "))
     $("#receiptTotal").text(" $" + pizza.calcCost())
+    validateAddressReceipt()
   });
 
   $("#reset").click(function(e){
