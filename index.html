@@ -14,61 +14,59 @@
     <h1>Pizza, Pizza!</h1>
   </div>
   <div class="container">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h2>Build your pizza</h2>
-        <div class="panel-body">
-          <form>
-            <div class="form-group">
-              <label for="name">Name:</label>
-              <input id="name" type="text" class="form-control">
-            </div>
-            <div class="form-group">
-              <label for="pizzaSize">Size:</label><br>
-              <label class="radio-inline"><input type="radio" name="size" value="Small">Small</label>
-              <label class="radio-inline"><input type="radio" name="size" value="Medium">Medium</label>
-              <label class="radio-inline"><input type="radio" name="size" value="Large">Large</label>
-            </div>
-            <div class="form-group">
-              <label for="crust">Crust Style:</label>
-              <select class="form-control" id="crust">
-                <option>Regular Crust</option>
-                <option>Thin Crust</option>
-                <option>Deep Dish</option>
-                <option>Stuffed Crust</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for=toppings>Toppings:</label><br>
-              <label class="checkbox-inline"><input type="checkbox" name="topping" value="Pepperoni">Pepperoni</label>
-              <label class="checkbox-inline"><input type="checkbox" name="topping" value="Mushrooms">Mushrooms</label>
-              <label class="checkbox-inline"><input type="checkbox" name="topping" value="Sausage">Sausage</label><br>
-              <label class="checkbox-inline"><input type="checkbox" name="topping" value="Spinach">Spinach</label>
-              <label class="checkbox-inline"><input type="checkbox" name="topping" value="Onion">Onion</label>
-              <label class="checkbox-inline"><input type="checkbox" name="topping" value="Green Peppers">Green Peppers</label>
-            </div>
-            <div id="delivery-address">
-             <div class="new-address">
-               <h3>Address to deliver to:</h3>
-               <div class="form-group">
-                 <label for="new-street">Street</label>
-                 <input type="text" class="form-control new-street">
-               </div>
-               <div class="form-group">
-                 <label for="new-city">City</label>
-                 <input type="text" class="form-control new-city">
-               </div>
-               <div class="form-group">
-                 <label for="new-state">State</label>
-                 <input type="text" class="form-control new-state">
-               </div>
-             </div>
-           </div>
-            <button id="pizzaBtn" class="btn btn-success" type="button" data-toggle="modal" data-target="#receiptModal">Order My Pizza!</button>
-            <span id="add-delivery" class="btn btn-info">Add Delivery</span>
-          </form>
+    <h2>Build your pizza</h2>
+      <form>
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input id="name" type="text" class="form-control">
         </div>
-      </div>
+        <div id="pizzaForm">
+          <div class="form-group">
+            <label for="pizzaSize">Size:</label><br>
+            <label class="radio-inline"><input type="radio" name="size" value="Small">Small</label>
+            <label class="radio-inline"><input type="radio" name="size" value="Medium">Medium</label>
+            <label class="radio-inline"><input type="radio" name="size" value="Large">Large</label>
+          </div>
+          <div class="form-group">
+            <label for="crust">Crust Style:</label>
+            <select class="form-control" id="crust">
+              <option>Regular Crust</option>
+              <option>Thin Crust</option>
+              <option>Deep Dish</option>
+              <option>Stuffed Crust</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for=toppings>Toppings:</label><br>
+            <label class="checkbox-inline"><input type="checkbox" name="topping" value="Pepperoni">Pepperoni</label>
+            <label class="checkbox-inline"><input type="checkbox" name="topping" value="Mushrooms">Mushrooms</label>
+            <label class="checkbox-inline"><input type="checkbox" name="topping" value="Sausage">Sausage</label><br>
+            <label class="checkbox-inline"><input type="checkbox" name="topping" value="Spinach">Spinach</label>
+            <label class="checkbox-inline"><input type="checkbox" name="topping" value="Onion">Onion</label>
+            <label class="checkbox-inline"><input type="checkbox" name="topping" value="Green Peppers">Green Peppers</label>
+          </div>
+        </div>
+        <div id="delivery-address">
+         <div class="new-address">
+           <h3>Address to deliver to:</h3>
+           <div class="form-group">
+             <label for="new-street">Street</label>
+             <input type="text" class="form-control new-street">
+           </div>
+           <div class="form-group">
+             <label for="new-city">City</label>
+             <input type="text" class="form-control new-city">
+           </div>
+           <div class="form-group">
+             <label for="new-state">State</label>
+             <input type="text" class="form-control new-state">
+           </div>
+         </div>
+       </div>
+        <button id="pizzaBtn" class="btn btn-success" type="button" data-toggle="modal" data-target="#receiptModal">Order My Pizza!</button>
+        <span id="add-delivery" class="btn btn-info">Add Delivery</span>
+        <span id="back" class="btn btn-danger">Back</span>
+      </form>
     </div>
     <div class="modal" id="receiptModal" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">

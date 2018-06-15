@@ -15,6 +15,6 @@
   margin-right: 10px;
 }
 
-#delivery-address {
+#delivery-address, #back {
   display:none;
 }

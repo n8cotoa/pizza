@@ -108,6 +108,16 @@ $(document).ready(function(){
   })
   $("#add-delivery").click(function() {
     $("#delivery-address").slideDown()
+    $("#pizzaForm").slideUp()
+    $("#add-delivery").hide()
+    $("#back").show()
+  });
+
+  $("#back").click(function(){
+    $("#pizzaForm").slideDown()
+    $("#delivery-address").slideUp()
+    $("#add-delivery").show()
+    $("#back").hide()
   });
 
   $("#pizzaBtn").click(function(e){
