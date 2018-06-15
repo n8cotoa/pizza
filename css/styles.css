@@ -1,3 +1,16 @@
+.jumbotron {
+  text-align: center;
+  background-image: url(../img/banner.jpg);
+  color: white;
+}
+
+.jumbotron h1 {
+  font-size: 3em;
+  font-weight: bold;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+}
+
 .radio-inline, .checkbox-inline {
   margin-right: 10px;
 }

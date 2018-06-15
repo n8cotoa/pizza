@@ -85,7 +85,27 @@ function validateAddressReceipt() {
   }
 }
 
+function inputHasValues() {
+  if ($("#name").val() && $("input:radio[name=size]:checked").val() && $("#crust").val() && $("input:checkbox[name=topping]:checked").val()) {
+    return true
+  } else {
+    return false
+  }
+}
+
+function disableOrderBtn() {
+  $("#pizzaBtn").prop('disabled', 'true')
+}
+
+function enableOrderBtn() {
+  $("#pizzaBtn").removeAttr('disabled')
+}
+
 $(document).ready(function(){
+  disableOrderBtn()
+  $("#name, input:radio[name=size], #crust, input:checkbox[name=topping]").click(function(){
+  inputHasValues() ? enableOrderBtn() : disableOrderBtn();
+  })
   $("#add-delivery").click(function() {
     $("#delivery-address").slideDown()
   });
